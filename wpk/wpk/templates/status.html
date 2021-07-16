@@ -1,0 +1,26 @@
+<html>
+<body>
+<form action="/statusskype/" method="POST">
+    {% csrf_token %}
+Hangouts link: <input type="text" name="videolink">
+<br>
+<select name="status">
+        <option>Online.</option>
+        <option>Leżę na fortepianie.</option>
+        <option>Piję Kustosza.</option>
+		<option>Wideorozmowa jest możliwa.</option>
+	    <option>Wideorozmowa nie jest teraz możliwa.</option>
+    	<option>Видеозвонок в это время невозможен.</option>
+</select>
+<br>
+<br>
+<br>
+
+<button>Uaktualnij link i status.</button>
+</form>
+
+
+
+
+</body>
+</html>

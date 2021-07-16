@@ -1,0 +1,42 @@
+ {% load static %}
+ {% load inbox %}
+ <html>
+<head>
+<style>
+@font-face {
+font-family: 'inter';
+src: url('{% static 'inter.ttf' %}') format('truetype');
+}
+
+
+body {
+font-family: 'inter', Arial, sans-serif;
+}
+
+
+</style>
+</head>
+<body style="padding: 0 0 0 0;background: radial-gradient(circle at 0%,rgba(0,128,128,1) 90%, rgba(0,128,128,0.3) 92%, rgba(0,0,0,0) 93%);background-repeat:repeat;">
+ <div style="display:flex;justify-content:space-between;flex-direction: column;width:100%; font-size: 7.5vw; color:#fff;" id="pewiendiv">
+
+<div style = "text-align:center;">
+<!--<span>{{ status }}</span><br>-->
+<img src="{% static 'demo-c.png' %}" style="width: calc(15vw + 30vh);border: 1px solid teal;border-radius:50%;"></img>
+</div>
+<div style = "text-align:center;">
+<span>{{ status }}</span><br>
+<span id = "spanilink"><a href="{{ videolink }}" target="_top">>>wideorozmowa<<</a></span>
+</div>
+
+
+
+ </div>
+
+<script>
+if ("{{ videolink }}" == "") {
+document.getElementById("spanilink").innerHTML = "";
+}
+window.parent.postMessage("X{% inbox_count %}", "https://cbrl.pythonanywhere.com");
+ </script>
+ </body>
+ </html>

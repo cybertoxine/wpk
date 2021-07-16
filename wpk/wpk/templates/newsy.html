@@ -1,0 +1,45 @@
+{% load static %}
+<head>
+<link rel="stylesheet" href="{% static 'css/machina.board_theme.vendor.min.css' %}" />
+<style>
+@font-face {
+font-family: 'inter';
+src: url('{% static 'inter.ttf' %}') format('truetype');
+}
+
+body {
+background-color:#ffff80;
+font-family: 'inter', Arial, sans-serif;
+font-size:1rem;
+overflow:hidden;
+color:black;
+padding:0.5rem;
+
+}
+
+hr {
+border-color:black;
+}
+
+.pokaz {
+position:fixed;
+width:100%;
+bottom:0px;
+text-align:center;
+color:black;
+box-shadow: inset 0px -67px 20px 0px #ffff80;
+height:100px;
+}
+
+</style>
+
+</head>
+
+<body>
+{% autoescape off %}
+{{ ogloszenia }}
+{% endautoescape %}
+</body>
+
+
+

@@ -1,0 +1,68 @@
+<html>
+<style>
+input {
+    width:100%;
+    font-size: calc(1vw + 2vh);
+}
+
+label {
+    color:palegreen;
+}
+
+</style>
+
+
+
+<body style="font-size: calc(1vw + 2vh); background-color: palegreen; overflow: hidden;">
+
+
+  <textarea id="tarea0" name="poufne0" placeholder="pacjent" style="text-align:center;border: calc(0.6vw + 0.6vh) solid palegreen; resize: none;bottom: 0px; font-size: calc(1vw + 2vh); width: 100%; height: calc(6vw + 6vh);background-color: white; color:black;"></textarea>
+  <textarea id="tarea1" name="poufne1" placeholder="info" style="border: calc(0.6vw + 0.6vh) solid palegreen; resize: none;bottom: 0px;  font-size: calc(1vw + 2vh); width: 100%; height: calc(13vw + 13vh);background-color: white; color:black;"></textarea>
+  <textarea id="tarea2" name="poufne2" placeholder="kontakt" style="display:none;border: calc(0.6vw + 0.6vh) solid palegreen; resize: none;bottom: 0px; font-size: calc(1vw + 2vh); width: 100%; height: calc(8vw + 8vh);background-color: white; color:black;"></textarea>
+
+
+<div style="width:100%; text-align: center;">
+<button id="test" onclick="wyslijtxt();" style="border: none; border-radius: 1vw; color: white; background-color: green; cursor: pointer; font-size: calc(2vw + 4vh); ">WYŚLIJ</button>
+</div>
+<script>
+
+
+function wyslijtxt() {
+
+document.getElementById("test").innerHTML = "TRWA WYSYŁANIE..."
+
+
+var xhr = new XMLHttpRequest();
+var url = "https://cbrl.pythonanywhere.com/poufneajaxp/";
+xhr.open("POST", url, true);
+xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+xhr.setRequestHeader("Data-Type", "json");
+xhr.onreadystatechange = function () {
+if (xhr.readyState === 4 && xhr.status === 200) {
+        var json = JSON.parse(xhr.responseText);
+        compare = json.info;
+        alert(compare);
+        location.href = "https://cbrl.pythonanywhere.com/poufneajaxp/"
+}
+}
+
+let txt0 = document.getElementById("tarea0").value;
+let txt1 = document.getElementById("tarea1").value;
+let txt2 = document.getElementById("tarea2").value;
+
+
+
+
+var wartosciPol = JSON.stringify('{"txt0": "' + txt0 + '", "txt1": "' + txt1 + '", "txt2": "' + txt2 + '"}');
+xhr.send(wartosciPol);
+
+
+}
+
+
+
+</script>
+
+
+</body>
+</html>

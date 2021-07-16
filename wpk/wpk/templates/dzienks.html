@@ -1,0 +1,35 @@
+<html>
+    <body style="font-size: calc(1.5vw + 3vh)">
+        <div style="text-align: center;">
+        Dziękuję za wysłanie wiadomości!<br><br><br><br><br>
+        </div>
+
+        <div id="odliczanie" style="text-align: center; font-size: calc(3vw + 6vh); ">
+
+        </div>
+
+        <div style="text-align: center; font-size: calc(1.5vw + 3vh); ">
+        <br><br>
+        </div>
+
+
+    </body>
+</html>
+
+<script>
+var b = setInterval("odliczanie();",1000);
+licznik = 10
+document.getElementById("odliczanie").innerHTML = licznik
+function odliczanie() {
+
+
+    if (licznik != -1) {
+    licznik = licznik - 1
+    document.getElementById("odliczanie").innerHTML = licznik
+    }else{
+        window.location.replace("https://cbrl.pythonanywhere.com/poufne/");
+    }
+}
+
+
+</script>

@@ -1,0 +1,4 @@
+{% load inbox %}
+<script>
+window.parent.postMessage("{% inbox_count %}", "https://cbrl.pythonanywhere.com");
+</script>

@@ -1,0 +1,94 @@
+<html>
+<style>
+input {
+    width:100%;
+    font-size: calc(1vw + 2vh);
+}
+
+label {
+    color:palegreen;
+}
+
+#id_description {
+fontSize = calc(1vw + 2vh);
+width: 100%;
+height: calc(15vw + 30vh);
+resize: none;
+}
+
+#id_pacjent {
+fontSize = calc(1vw + 2vh);
+width: 100%;
+pointer-events: none;
+text-align:center;
+
+}
+
+</style>
+
+
+
+<body style="font-size: calc(1vw + 2vh); background-color: palegreen; overflow: hidden;">
+
+<form method="post" action="https://cbrl.pythonanywhere.com/poufne/" enctype="multipart/form-data" autocomplete="off">
+    {% csrf_token %}
+    {{ form.as_p }}
+<button type="submit" id="plik" style="display:none;border: none; border-radius: 1vw; color: white; background-color: green; cursor: pointer; font-size: calc(2vw + 4vh);">WYŚLIJ</button>
+</form>
+<div style="width:100%; text-align: center;">
+<button type="button" id="go" onclick="showme()" style="border: none; border-radius: 1vw; color: white; background-color: green; cursor: pointer; font-size: calc(2vw + 4vh);margin-top:calc(3vw + 6vh);">WYŚLIJ</button>
+</div>
+<script>
+document.getElementById("id_pacjent").value = "Poufna wiadomość od użytkownika {{ user.get_username }}.";
+document.getElementById("id_description").placeholder = "Miejsce na wiadomość. Można też załączyć plik.";
+
+function showme() {
+document.getElementById("go").innerHTML = "TRWA WYSYŁANIE..."
+fileinput = document.getElementById("id_document");
+if (typeof fileinput.files[0] == "undefined") { uzyj_ajax();} else { wyslij_normalnie();};
+}
+
+function uzyj_ajax() {
+
+let txt0 = document.getElementById("id_pacjent").value;
+let txt1 = document.getElementById("id_description").value;
+
+
+var xhr = new XMLHttpRequest();
+var url = "https://cbrl.pythonanywhere.com/poufneajax/";
+xhr.open("POST", url, true);
+xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+xhr.setRequestHeader("Data-Type", "json");
+xhr.onreadystatechange = function () {
+if (xhr.readyState === 4 && xhr.status === 200) {
+        var json = JSON.parse(xhr.responseText);
+        compare = json.info;
+        window.location.replace("https://cbrl.pythonanywhere.com/dzienks/")
+}
+}
+
+
+var wartosciPol = JSON.stringify('{"txt0": "' + txt0 + '", "txt1": "' + txt1 + '", "txt2": "nie załączono pliku"}');
+xhr.send(wartosciPol);
+
+
+}
+
+
+function wyslij_normalnie() {
+document.getElementById("plik").click();
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

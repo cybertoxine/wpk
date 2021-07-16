@@ -1,0 +1,981 @@
+{% load static %}
+
+
+<style>
+
+@font-face {
+  font-family: 'inter';
+  src: url('{% static 'inter.ttf' %}') format('truetype');
+}
+
+
+
+input {
+
+font-size: 2rem;
+
+}
+
+.pseudolink {
+    border: 4px dashed fuchsia;
+    border-radius:0rem;
+    color:fuchsia;
+    cursor:pointer;
+    background-color: white;
+    font-size: 3rem;
+    font-family: 'inter', Arial, sans-serif;
+    transition: 0.6s;
+}
+
+.pseudolink:hover {
+    color:purple;
+    border-radius:1rem;
+    border: 4px dashed purple;
+
+}
+
+.pseudolinkdwa {
+    border-left: 0px solid orange;
+    border-right: 0px solid orange;
+    border-top: 0px solid orange;
+    border-bottom: 2px dashed fuchsia;
+    border-radius:0rem;
+    color: white;
+    cursor:pointer;
+    font-size: 1.0rem;
+    background-color: rgba(240,240,240,0);
+    margin:0 0 0 0;
+    padding:0.5em 0 0.5em 0;
+    transition: 0.6s;
+    font-family: inter;
+    height:100%;
+}
+
+.pseudolinkdwa:hover {
+   border-color: purple;
+   color:purple;
+   text-shadow: 1px 1px 4px #FFFFFF,1px 1px 4px #FFFFFF, 1px 1px 4px #FFFFFF,1px 1px 4px #FFFFFF;
+   border-radius:1rem;
+}
+
+.projektor {
+position: fixed;
+bottom:0px;
+right: 0px;
+background-color:black;
+width:100%;
+height: 100%;
+z-index: 100;
+transition:0.6s;
+opacity:0;
+pointer-events:none;
+}
+
+
+
+h5 {
+    font-weight:400;
+}
+
+.slajd {
+width:35%;
+background-color:rgba(0,0,0,0.0);
+display:block;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.p_slajd {
+padding: 1vw 1vw 1vw 1vw;
+}
+
+.slide_div {
+width:100%;
+display:flex;
+justify-content: space-around;
+margin-top:0vw;
+}
+
+.opis {
+color:white;
+background-color:rgba(0,0,0,0.5);
+font-size:1.5vw;
+border:3px solid rgba(0,0,0,0.0);
+margin-top:1vw;
+}
+
+.opis p {
+margin-top:0px;
+margin-bottom:0px;
+}
+
+.lupka {
+position:absolute;
+width:35vw;
+height:20vw;
+background-image: url("{% static 'lupka5.png' %}");
+background-size: 100% 100%;
+background-repeat: no-repeat;
+z-index:50;
+transition:0.6s;
+opacity:0;
+pointer-events:none;
+filter:brightness(200%);
+}
+
+
+.obr {
+width:100%;
+cursor:pointer;
+border:0px solid pink;
+border-color:white;
+}
+
+.text {
+    color:black;
+    font-size:1.7vw;
+    padding:0px;
+    text-align:justify;
+    position:absolute;
+    background-color:rgba(255,0,50,0);
+
+}
+
+
+
+</style>
+<head>
+<title>
+Wirtualny pokój konsultacyjny - recepty, leki, suplementy diety, fitness, dietetyka.
+</title>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="keywords" content="recepty leki suplementy diety fitness dietetyka wirtualny pokój konsultacyjny forum dyskusyjne farmacja farmaceuta" />
+<meta name="description" content="Miejsce w którym ludzie spotykają się by porozmawiać o lekach oraz o tym co naprawdę dobrze działa. Możemy wystawić receptę." />
+
+<link rel="shortcut icon" href="{% static 'apt.png' %}"/>
+</head>
+<html>
+<script>var jezykstrony = "pl";</script>
+<script src="/static/three.min.js"></script>
+
+
+
+<body style="font-size: 2rem; margin:0; color: snow; font-family: 'inter', Arial, sans-serif;  margin-bottom:0px;background-image:url('{% static 'fd6.png' %}');background-size:cover;background-color:white; ">
+<!--<div id="tlogorne" style="background-image:url('{% static 'mu6.jpg' %}');background-size:cover;">-->
+<div id="powieksz" class="projektor"></div>
+
+
+
+        <div style="margin-bottom:0px;">
+
+<div style="position:relative;">
+<div style="width:100%;background-image: url('{% static 'deko.jpg' %}');height:0px;"></div>
+<div style="background-color:rgba(0,128,128,0.0);width:100%;position:absolute;top: 0px;right:3.75%;">
+    <div style="background-color:rgba(100,50,0,0);width:15rem;display:flex;justify-content:space-between; text-align:right; z-index:10;margin-left:auto;magin-right:0;border:0px solid red; ">
+
+
+            <button class="pseudolinkdwa" id="b1" ></button>
+            <button class="pseudolinkdwa" id="b2" ></button>
+            <button class="pseudolinkdwa" id="b0" ></button>
+            <button class="pseudolinkdwa" id="b3">&nbsp;licencja&nbsp;</button>
+
+    </div>
+</div>
+</div>
+
+
+
+
+            <div style="width:85%;padding-top:2rem;font-size: 3rem; text-align: center; margin-top: 0vw; margin-bottom: 0px;margin-left:7.5%;magin-right:auto; border-top: 0px solid violet; border-bottom: 0px solid violet;   display:flex; justify-content: space-between; ">
+
+
+
+
+
+                <div id="div0" style="color:indigo;">
+
+<p style="font-size:3.7vw; text-shadow: 0 0 2px #ffffff, 0 0 2px #ffffff,0 0 2px #ffffff, 0 0 2px #ffffff,0 0 2px #ffffff, 0 0 2px #ffffff;margin-bottom:0vw;margin-top:0vw; ">Wirtualny Pokój Konsultacyjny</p>
+<div style="font-size:1vw;color:black;text-align:left;">Opiekun pokoju: mgr farm. Piotr Głuchowski</div>
+
+<div style="position:absolute;width:3.5rem; height:4rem; border:0px solid lime;padding: 0px;margin-right:0px;margin-left:auto;margin-top:1rem;">
+<div style="display:block;width:3.5rem;height:0.5rem;"></div>
+<div id="flaga" style="display:block;width:3.5rem;height:2rem;border:0px solid black;background-image: url('{% static 'pl.png' %}');background-size: cover;"></div>
+<div style="display:block;width:3.5rem;height:0.5rem;"></div>
+<div style="display:block;width:3.5rem;height:1rem;border:0px solid blue;">
+
+<select id="jezyk" onchange="jezyk();" style="position:absolute;left:0px;color:black;background-color:rgba(0,0,0,0);width:3.5rem;border:none; text-shadow: 0 0 2px #ffffff, 0 0 2px #ffffff,0 0 2px #ffffff, 0 0 2px #ffffff,0 0 2px #ffffff, 0 0 2px #ffffff; ">
+		<option>PL</option>
+		<option>RUS</option>
+</select>
+</div>
+</div>
+
+
+
+                <br><br>
+                <form method="post">
+                {% csrf_token %}
+                <!-- {{ form.non_field_errors }} -->
+                {% if form.errors %}
+                <p style="color:red;">Coś zostało źle wpisane.</p>
+                {% endif %}
+                    <div  style="text-align:left;">
+
+
+
+
+
+
+
+
+                        <div class="fieldWrapper">
+                            <div>
+                        {{ form.username.errors }}
+                        <label id="uzyt_label" for="{{ form.username.id_for_label }}" style="text-shadow: 0 0 2px #ffffff, 0 0 2px #ffffff,0 0 2px #ffffff, 0 0 2px #ffffff,0 0 2px #ffffff, 0 0 2px #ffffff;" >login:</label>
+                            </div>
+                            <div>
+                        {{ form.username }}
+                            </div>
+                        </div>
+
+
+                        <div class="fieldWrapper">
+                            <div style="flcoat:left;">
+                            {{ form.password.errors }}
+                        <label  id="haslo_label" for="{{ form.password.id_for_label }}" style="text-shadow: 0 0 2px #ffffff, 0 0 2px #ffffff,0 0 2px #ffffff, 0 0 2px #ffffff,0 0 2px #ffffff, 0 0 2px #ffffff; ">hasło:</label>
+                            </div>
+                            <div>
+                         {{ form.password }}
+                            </div>
+                        </div>
+                    <div style="text-align:left;width:90%;">
+                    <div style="font-size:1rem;margin-top:1rem;margin-bottom:1rem;cursor:pointer; " onclick="alert('Na piog@op.pl lub SMS-em na numer 572933336 można przesłać propozycję własnego loginu i hasła. Login będzie jednocześnie nazwą użytkownika.');"><a style="text-shadow: 0 0 2px #ffffff, 0 0 2px #ffffff,0 0 2px #ffffff, 0 0 2px #ffffff,0 0 2px #ffffff, 0 0 2px #ffffff; " >Nie dostałeś wizytówki z loginem i hasłem? Kliknij!</a></div>
+                    </div>
+                    <button id="zal" type="submit" class="pseudolink" onclick="napis(); zumbaj.play();">wchodzę</button>
+                    </div>
+
+
+
+
+
+                </form>
+
+                </div>
+
+                 <div style="width: 30vw; height:45vw; border: 0px solid red; margin-top:30vh;margin-bottom:auto;background-image: url('{% static 'waz11.png' %}');background-size:contain;background-repeat: no-repeat;">
+
+                     <canvas id="canvas" style="width:100%; height:100%;margin-top:-1.5vw;margin-bottom:auto;visibility:hidden;"></canvas>
+                 </div>
+            </div>
+
+
+
+
+        </div>
+<div style:"position:absolute;bottom:0;">
+<div style="text-align:center; width:100%; height:1vw;background-color:rgba(0,0,0,0.8);"></div>
+<div id="stopka" style="text-align:center; width:100%; height:2vw;background-color:rgba(0,0,0,0.8); font-size:1vw;color:white;">© 2021 Piotr Głuchowski z zastrzeżeniami ujętymi w zakładce "licencja"</div>
+</div>
+
+<!--</div>-->
+<div style='background-color:rgb(200,200,200);margin-top:0vw;z-index:9;display:none; '>
+
+<div style="height:43vw;"></div>
+
+<div class="slide_div" >
+
+<div class="slajd" style="margin-top:-30vw;">
+
+    <div id="pinktxt0" class="text" style="left:50.5%;height:25vw;width:42%;margin-top:0vw;">
+Tu znajduje się krótka prezentacja aptecznego Wirtualnego Pokoju Konsultacyjnego.
+ Projekt zaczął powstawać z myślą o obywatelach Federacji Rosyjskiej którym chcieliśmy zaoferować narzędzie ułatwiające zakup leków w Polsce.
+ Zamiast od razu, fizycznie dostarczać receptę mogą teraz wcześniej wysłać ją elektronicznie za pomocą WPK, a potem otrzymać komunikat o lekach gotowych do odebrania. Dzięki temu przekraczają granicę tylko raz.
+ W "dobie koronawirusa" zdalna komunikacja z personelem apteki nabrała nowego znaczenia.
+</div>
+
+
+
+<div id="l0" class="lupka"></div>
+<img id="o0" class="obr" src="{% static 'demologin0bb.jpg' %}" id="k1" alt="wirtualny pokój konsultacyjny opis ikonek i wyszukiwarki" onclick="kliknietoObrazek0();" title="kliknij by powiększyć">
+<div class="opis" >
+<p id="s0_0" class="p_slajd">Komfortowe, intuicyjne poruszanie się po stronie. Możesz zapomnieć o reklamach, banerach, wyskakujących okienkach i innych przeszkodach koncentrując się w pełni na tym co dla Ciebie naprawdę istotne.</p>
+<p id ="s0_1" class="p_slajd">Szanujemy Twój czas.</p>
+</div>
+
+</div>
+
+
+<div class="slajd" style="margin-top:auto;" >
+<div id="l1" class="lupka"></div>
+<img id="o1" class="obr" src="{% static 'demologin1bb.jpg' %}" id="k2" alt="wirtualny pokój konsultacyjny opis ikonek i wyszukiwarki" onclick="kliknietoObrazek1();" title="kliknij by powiększyć" >
+<div class="opis">
+<p id="s1_0" class="p_slajd">Forum dyskusyjne moderowane przez specjalistów. Pilnujemy by treści tam zawarte miały sens i były pomocne.</p>
+<p id="s1_1" class="p_slajd" >Baza rzetelnych informacji, porad i autentycznych wrażeń jakie ludzie odnoszą ze stosowania różnych specyfików.</p>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<div  id = "pr1" class="slide_div" style="margin-top:11vw;" >
+<div id = "pr1tx" class="text" style="left:7.5%;height:25vw;width:42%;">
+<div id = "pr1tx_" style="display:absolute;margin-bottom:1vw;">
+Wirtualny Pokój Konsultacyjny to też miejsce gdzie ludzie pomagają sobie w podejmowaniu przemyślanych decyzji zakupowych.
+Podjęcie przemyślanej decyzji często wiąże się z zaoszczędzeniem pieniędzy, które mogły być niepotrzebnie wydane na coś co działa źle lub tak samo jak inny tańszy preparat.
+Serwis posiada zasięg lokalny i ma ekskluzywny charakter. Dostęp do niego jest możliwy wyłącznie za pomocą unikatowych danych zawartych na wizytówce. Wizytowka jest wręczana tylko osobiście.
+</div>
+</div>
+
+<div class="slajd" style="margin-top:-30vw;">
+<div id="l2" class="lupka"></div>
+<img id="o2" class="obr" src="{% static 'demologin4bb.jpg' %}" id="k3" alt="wirtualny pokój konsultacyjny opis ikonek i wyszukiwarki" onclick="kliknietoObrazek4();" title="kliknij by powiększyć">
+<div class="opis">
+<p id="s2_0" class="p_slajd">Dwa kliknięcia, trochę tekstu i sprawa załatwiona. Mistrzostwo świata w ergonomii.</p>
+<p id="s2_1" class="p_slajd">Brakuje jakiejś potrzebnej funkcjonalności? Powiedz nam o tym a wystarczy jedno popołudnie i będzie zaimplementowana. Ciesz się razem z nami rozwijając ten darmowy soft. :-)</p>
+</div>
+</div>
+
+
+<div class="slajd">
+<div id="l3" class="lupka" ></div>
+<img id="o3" class="obr" src="{% static 'demologin3bb.jpg' %}" id="k4" alt="wirtualny pokój konsultacyjny opis ikonek i wyszukiwarki" onclick="kliknietoObrazek3();" title="kliknij by powiększyć">
+<div class="opis">
+<p id = "s3_0" class="p_slajd">W telefonie, już po zalogowaniu się, proponujemy dodać stronę do ekranu głównego w menu przeglądarki internetowej.</p>
+<p id = "s3_1" class="p_slajd">Wtedy nie trzeba będzie za każdym razem wpisywać loginu i hasła, a całość, bez instalowania, będzie działać jak natywna "apka". </p>
+</div>
+
+</div>
+
+</div>
+
+<div style="text-align:center; width:100%; height:11vw;"></div>
+<div style="text-align:center; width:100%; height:1vw;background-color:rgba(0,0,0,0.8);"></div>
+<div id="stopka" style="text-align:center; width:100%; height:2vw;background-color:rgba(0,0,0,0.8); font-size:1vw;color:white;">© 2020 Piotr Głuchowski z zastrzeżeniami ujętymi w zakładce "licencja"</div>
+
+
+</div>
+
+</div>
+
+
+<div style="position:fixed;bottom:0px;width:100%;background-image: url('{% static 'deko.jpg' %}');height:0px;">
+
+<!--
+<div style="background-color:rgba(0,128,128,0.0);width:100%;position:absolute;top:-24px;">
+    <div style="background-color:rgba(150,75,0,1);width:45rem; display:flex; justify-content: space-between;z-index:10;margin-left:auto;margin-right:7.5%;border:0px solid red; ">
+
+            <button class="pseudolinkdwa" id="b0">ADMINISTRATOR</button>
+            <button class="pseudolinkdwa" id="b1">NEKROLOGI</button>
+            <button class="pseudolinkdwa" id="b2">TEST SAMOOPALACZY</button>
+            <button class="pseudolinkdwa" id="b3">LICENCJA</button>
+
+    </div>
+</div>
+
+-->
+
+
+
+</div>
+
+<audio id="zumbaj">
+
+  <source src="{% static 'zumbaj.mp3' %}" type="audio/mpeg">
+
+</audio>
+</body>
+
+<script>
+zumbaj = document.getElementById('zumbaj');
+
+document.getElementById("o0").addEventListener("mouseover", l0_show);
+document.getElementById("o0").addEventListener("mouseout", l0_hide);
+document.getElementById("o1").addEventListener("mouseover", l1_show);
+document.getElementById("o1").addEventListener("mouseout", l1_hide);
+document.getElementById("o2").addEventListener("mouseover", l2_show);
+document.getElementById("o2").addEventListener("mouseout", l2_hide);
+document.getElementById("o3").addEventListener("mouseover", l3_show);
+document.getElementById("o3").addEventListener("mouseout", l3_hide);
+
+function l0_show() {document.getElementById("l0").style.opacity = "1";document.getElementById("l0").style.width = "41vw";document.getElementById("l0").style.marginLeft = "-3vw";document.getElementById("l0").style.height = "24vw";document.getElementById("l0").style.marginTop = "-2vw";};
+function l0_hide() {document.getElementById("l0").style.opacity = "0";document.getElementById("l0").style.width = "35vw";document.getElementById("l0").style.marginLeft = "0vw";document.getElementById("l0").style.height = "20vw";document.getElementById("l0").style.marginTop = "0vw";};
+function l1_show() {document.getElementById("l1").style.opacity = "1";document.getElementById("l1").style.width = "41vw";document.getElementById("l1").style.marginLeft = "-3vw";document.getElementById("l1").style.height = "24vw";document.getElementById("l1").style.marginTop = "-2vw";};
+function l1_hide() {document.getElementById("l1").style.opacity = "0";document.getElementById("l1").style.width = "35vw";document.getElementById("l1").style.marginLeft = "0vw";document.getElementById("l1").style.height = "20vw";document.getElementById("l1").style.marginTop = "0vw";};
+function l2_show() {document.getElementById("l2").style.opacity = "1";document.getElementById("l2").style.width = "41vw";document.getElementById("l2").style.marginLeft = "-3vw";document.getElementById("l2").style.height = "24vw";document.getElementById("l2").style.marginTop = "-2vw";};
+function l2_hide() {document.getElementById("l2").style.opacity = "0";document.getElementById("l2").style.width = "35vw";document.getElementById("l2").style.marginLeft = "0vw";document.getElementById("l2").style.height = "20vw";document.getElementById("l2").style.marginTop = "0vw";};
+function l3_show() {document.getElementById("l3").style.opacity = "1";document.getElementById("l3").style.width = "41vw";document.getElementById("l3").style.marginLeft = "-3vw";document.getElementById("l3").style.height = "24vw";document.getElementById("l3").style.marginTop = "-2vw";};
+function l3_hide() {document.getElementById("l3").style.opacity = "0";document.getElementById("l3").style.width = "35vw";document.getElementById("l3").style.marginLeft = "0vw";document.getElementById("l3").style.height = "20vw";document.getElementById("l3").style.marginTop = "0vw";};
+
+
+function napis() {if (document.getElementById('id_password').value != '' && document.getElementById('id_username').value != '' ) {
+document.getElementById("zal").innerHTML = "trwa logowanie...";
+};
+};
+
+document.getElementById("powieksz").addEventListener("click", schowajSlajd);
+
+document.getElementById("b0").addEventListener("mouseover", pokazAdmina);
+document.getElementById("b0").addEventListener("mouseout", schowajAdmina);
+
+document.getElementById("b2").addEventListener("mouseover", pokazTest);
+document.getElementById("b2").addEventListener("mouseout", schowajTest);
+
+document.getElementById("b3").addEventListener("mouseover", pokazLic);
+document.getElementById("b3").addEventListener("mouseout", schowajLic);
+
+document.getElementById("b1").addEventListener("mouseover", pokazPr);
+document.getElementById("b1").addEventListener("mouseout", schowajPr);
+
+
+
+
+function jezyk() {
+    if (document.getElementById("jezyk").value == "PL") {
+        document.getElementById("flaga").style.backgroundImage = "url('{% static "pl.png" %}')";
+        jezykstrony = "pl";
+        polify();
+
+    } else {
+        document.getElementById("flaga").style.backgroundImage = "url('{% static "ru.png" %}')";
+        jezykstrony = "rus";
+        rusify();
+    }
+}
+
+function schowajSlajd() {
+document.getElementById("powieksz").style.opacity = "0";
+document.getElementById("powieksz").style.pointerEvents = "none";
+}
+
+function kliknietoObrazek0() {
+if (jezykstrony == "pl") {
+document.getElementById("powieksz").innerHTML = `<img src="{% static 'demologin0bb.jpg' %}" style="max-height: 100%;max-width: 100%;width:auto; height:auto;cursor:pointer; position:absolute; top:0px; bottom:0px; left:0px; right:0px; margin:auto;">`;
+document.getElementById("powieksz").style.opacity = "1";
+document.getElementById("powieksz").style.pointerEvents = "all";
+} else {
+document.getElementById("powieksz").innerHTML = `<img src="{% static 'ruslajd0.jpg' %}" style="max-height: 100%;max-width: 100%;width:auto; height:auto;cursor:pointer; position:absolute; top:0px; bottom:0px; left:0px; right:0px; margin:auto;">`;
+document.getElementById("powieksz").style.opacity = "1";
+document.getElementById("powieksz").style.pointerEvents = "all";
+}
+}
+
+function kliknietoObrazek1() {
+if (jezykstrony == "pl") {
+document.getElementById("powieksz").innerHTML = `<img src="{% static 'demologin1bb.jpg' %}" style="max-height: 100%;max-width: 100%;width:auto; height:auto;cursor:pointer; position:absolute; top:0px; bottom:0px; left:0px; right:0px; margin:auto;">`;
+document.getElementById("powieksz").style.opacity = "1";
+document.getElementById("powieksz").style.pointerEvents = "all";
+} else {
+document.getElementById("powieksz").innerHTML = `<img src="{% static 'ruslajd1.jpg' %}" style="max-height: 100%;max-width: 100%;width:auto; height:auto;cursor:pointer; position:absolute; top:0px; bottom:0px; left:0px; right:0px; margin:auto;">`;
+document.getElementById("powieksz").style.opacity = "1";
+document.getElementById("powieksz").style.pointerEvents = "all";
+}
+}
+
+function kliknietoObrazek3() {
+document.getElementById("powieksz").innerHTML = `<img src="{% static 'demologin3bb.jpg' %}" style="max-height: 100%;max-width: 100%;width:auto; height:auto;cursor:pointer; position:absolute; top:0px; bottom:0px; left:0px; right:0px; margin:auto;">`;
+document.getElementById("powieksz").style.opacity = "1";
+document.getElementById("powieksz").style.pointerEvents = "all";
+}
+
+function kliknietoObrazek4() {
+if (jezykstrony == "pl") {
+document.getElementById("powieksz").innerHTML = `<img src="{% static 'demologin4bb.jpg' %}" style="max-height: 100%;max-width: 100%;width:auto; height:auto;cursor:pointer; position:absolute; top:0px; bottom:0px; left:0px; right:0px; margin:auto;">`;
+document.getElementById("powieksz").style.opacity = "1";
+document.getElementById("powieksz").style.pointerEvents = "all";
+} else {
+document.getElementById("powieksz").innerHTML = `<img src="{% static 'ruslajd2.jpg' %}" style="max-height: 100%;max-width: 100%;width:auto; height:auto;cursor:pointer; position:absolute; top:0px; bottom:0px; left:0px; right:0px; margin:auto;">`;
+document.getElementById("powieksz").style.opacity = "1";
+document.getElementById("powieksz").style.pointerEvents = "all";
+}
+}
+
+
+
+
+function pokazAdmina() {
+if (jezykstrony == "pl") {
+txtMat.map = txttexture0;
+} else {
+txtMat.map = ru_txttexture0;
+};
+txtMesh.material.needsUpdate = true;
+stop = false;
+stop2 = true;
+pokazTxt();
+}
+
+function schowajAdmina() {
+stop = true;
+stop2 = false;
+schowajTxt();
+}
+
+function pokazTest() {
+if (jezykstrony == "pl") {
+txtMat.map = txttexture1;
+} else {
+txtMat.map = ru_txttexture1;
+};
+txtMesh.material.needsUpdate = true;
+stop = false;
+stop2 = true;
+pokazTxt();
+}
+
+function schowajTest() {
+stop = true;
+stop2 = false;
+schowajTxt();
+}
+
+function pokazLic() {
+if (jezykstrony == "pl") {
+txtMat.map = txttexture2;
+} else {
+txtMat.map = ru_txttexture2;
+};
+txtMesh.material.needsUpdate = true;
+stop = false;
+stop2 = true;
+pokazTxt();
+}
+
+function schowajLic() {
+stop = true;
+stop2 = false;
+schowajTxt();
+}
+
+function pokazPr() {
+if (jezykstrony == "pl") {
+txtMat.map = txttexture3;
+} else {
+txtMat.map = ru_txttexture3;
+};
+txtMesh.material.needsUpdate = true;
+stop = false;
+stop2 = true;
+pokazTxt();
+}
+
+function schowajPr() {
+stop = true;
+stop2 = false;
+schowajTxt();
+}
+
+function pokazTxt() {
+    stop = false;
+    txtMesh.position.y=2
+    txtMesh.position.z=2.3;
+    wjazdTxt();
+}
+
+let pozycja = 2;
+let stop = true;
+let stop2= true;
+
+
+
+function wjazdTxt() {
+    pozycja -= 0.05;
+
+    txtMesh.position.y = pozycja;
+    szescian.position.y = pozycja*2 - 4;
+    if (pozycja > -0.15 && stop == false) {
+    setTimeout(function(){ wjazdTxt(); }, 10);
+    }
+}
+
+
+function schowajTxt() {
+    pozycja += 0.05;
+
+    txtMesh.position.y = pozycja;
+    szescian.position.y = pozycja*2 - 4;
+    if (pozycja < 2 && stop2 == false) {
+    setTimeout(function(){ schowajTxt(); }, 10);
+    } else {
+        szescian.position.y = 0;
+    }
+
+}
+
+const canvas = document.getElementById("canvas");
+const renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: false, precision: "mediump", alpha: true});
+renderer.setClearColor( 0x000000, 0);
+const fov = 40;
+const aspect = 1;
+const near = 0.1;
+const far = 30;
+const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+camera.position.z = 5;
+const scene = new THREE.Scene();
+const boxWidth = 2;
+const boxHeight = 2;
+const boxDepth = 2;
+const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+const loader = new THREE.TextureLoader();
+
+//var wireframe = new THREE.WireframeGeometry(geometry);
+
+//var materiall = new THREE.LineBasicMaterial( {
+//    color: 0x440386,
+    //vertexColors: THREE.VertexColors
+//} );
+
+//var line = new THREE.LineSegments( wireframe, materiall );
+//line.material.depthTest = false;
+//line.material.opacity = 0.5;
+//line.material.transparent = true;
+//line.color = 0x440386;
+//scene.add( line );
+
+var materials = [
+  new THREE.MeshBasicMaterial({map: loader.load("{% static 'trup0.png' %}")}),
+  new THREE.MeshBasicMaterial({map: loader.load("{% static 'trup0.png' %}")}),
+  new THREE.MeshBasicMaterial({map: loader.load("{% static 'trup0.png' %}")}),
+  new THREE.MeshBasicMaterial({map: loader.load("{% static 'trup0.png' %}")}),
+  new THREE.MeshBasicMaterial({map: loader.load("{% static 'trup9.png' %}")}),
+  new THREE.MeshBasicMaterial({map: loader.load("{% static 'trup0.png' %}")}),
+];
+
+//var test0 = new THREE.MeshPhongMaterial({map: loader.load("{% static 'apt.png' %}")});
+//var test1 = new THREE.MeshPhongMaterial({map: loader.load("{% static 'wirt2.png' %}")});
+
+
+const szescian = new THREE.Mesh( geometry, materials );
+szescian.position.z = 1;
+scene.add(szescian);
+
+
+
+
+
+
+
+
+
+const txttexture0 = new THREE.TextureLoader().load("{% static 'aditex3bxxx.png' %}");
+const txttexture1 = new THREE.TextureLoader().load("{% static 'danetesty3x.png' %}");
+const txttexture2 = new THREE.TextureLoader().load("{% static 'licensex.png' %}");
+const txttexture3 = new THREE.TextureLoader().load("{% static 'nekro.png' %}");
+
+const ru_txttexture0 = new THREE.TextureLoader().load("{% static 'ru_administrator2.png' %}");
+const ru_txttexture1 = new THREE.TextureLoader().load("{% static 'ru_testy.png' %}");
+const ru_txttexture2 = new THREE.TextureLoader().load("{% static 'ru_licencja2.png' %}");
+const ru_txttexture3 = new THREE.TextureLoader().load("{% static 'ru_nizej3.png' %}");
+
+
+var txtGeo = new THREE.PlaneBufferGeometry(2,2,16,16);
+var txtMat = new THREE.MeshBasicMaterial( {color: 0xffffff, side: THREE.DoubleSide, map: txttexture0} );
+var txtMesh = new THREE.Mesh( txtGeo, txtMat);
+txtMesh.position.z=6;
+scene.add(txtMesh);
+
+
+renderer.setSize(800, 800, false);
+
+
+
+function animate(time) {
+
+	  renderer.render(scene, camera);
+	  requestAnimationFrame( animate );
+}
+
+
+requestAnimationFrame( animate );
+
+
+function resizeCanvasToDisplaySize() {
+  wyrownanie();
+  const canvas = renderer.domElement;
+  const width = canvas.clientWidth;
+  const height = canvas.clientHeight;
+  if (canvas.width !== width ||canvas.height !== height) {
+   renderer.setSize(width, height, false);
+  }
+};
+
+
+
+
+
+//--------------
+
+
+
+////const txttexture02 = new THREE.TextureLoader().load("{% static 'aditex3b.png' %}");
+//const txttexture12 = new THREE.TextureLoader().load("{% static 'danetesty3.png' %}");
+//const txttexture22 = new THREE.TextureLoader().load("{% static 'license.png' %}");
+//const txttexture32 = new THREE.TextureLoader().load("{% static 'nizej2a.png' %}");
+
+
+
+
+
+
+
+//------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+document.getElementById("k1").style.filter = "opacity(13%)";
+document.getElementById("k2").style.filter = "opacity(13%)";
+document.getElementById("k3").style.filter = "opacity(13%)";
+
+*/
+
+document.getElementById("id_username").style.backgroundColor = "snow";
+document.getElementById("id_password").style.backgroundColor = "snow";
+
+document.getElementById("id_username").style.border = "1px solid indigo";
+document.getElementById("id_password").style.border = "1px solid indigo";
+
+document.getElementById("id_username").style.borderRadius = "0.0rem";
+document.getElementById("id_password").style.borderRadius = "0.0rem";
+
+document.getElementById("id_username").style.color = "indigo";
+document.getElementById("id_password").style.color = "indigo";
+
+
+
+/*
+window.addEventListener('scroll', function() { changeopacity(); });
+
+//document.getElementById("o0").style.borderColor = "rgba(255,192,203,0.0)";
+//document.getElementById("o1").style.borderColor = "rgba(255,192,203,0.0)";
+//document.getElementById("o2").style.borderColor = "rgba(255,192,203,0.0)";
+//document.getElementById("o3").style.borderColor = "rgba(255,192,203,0.0)";
+changeopacity();
+function changeopacity() {
+var h = window.innerHeight;
+var korekta = h/40;
+krok1 = document.getElementById("o3");
+
+var rect1 = krok1.getBoundingClientRect();
+var center1 = (h/2) - rect1.top - korekta;
+center1 = center1/1
+if (center1<0) { center1 = center1 - 2*center1; };
+if (center1<75) { krok1.style.borderColor = "rgba(255,192,203,1)"; }
+else if (center1>74 && center1<100){ krok1.style.borderColor = "rgba(255,192,203,0.9)";}
+else if (center1>99 && center1<125){ krok1.style.borderColor = "rgba(255,192,203,0.83)";}
+else if (center1>124 && center1<150){ krok1.style.borderColor = "rgba(255,192,203,0.76)";}
+else if (center1>149 && center1<175){ krok1.style.borderColor = "rgba(255,192,203,0.69)";}
+else if (center1>174 && center1<200){ krok1.style.borderColor = "rgba(255,192,203,0.62)";}
+else if (center1>199 && center1<225){ krok1.style.borderColor = "rgba(255,192,203,0.55)";}
+else if (center1>224 && center1<250){ krok1.style.borderColor = "rgba(255,192,203,0.48)";}
+else if (center1>249 && center1<275){ krok1.style.borderColor = "rgba(255,192,203,0.41)";}
+else if (center1>274 && center1<300){ krok1.style.borderColor = "rgba(255,192,203,0.34)";}
+else if (center1>299 && center1<325){ krok1.style.borderColor = "rgba(255,192,203,0.27)";}
+else if (center1>324 && center1<350){ krok1.style.borderColor = "rgba(255,192,203,0.2)";}
+else if (center1>349){ krok1.style.borderColor = "rgba(255,192,203,0.13)";}
+
+
+
+
+krok2 = document.getElementById("o2");
+
+var rect2 = krok2.getBoundingClientRect();
+var center2 = (h/2) - rect2.top - korekta;
+center2 = center2/1
+if (center2<0) { center2 = center2 - 2*center2; };
+if (center2<75) { krok2.style.borderColor = "rgba(255,192,203,1)"; }
+else if (center2>74 && center2<100){ krok2.style.borderColor = "rgba(255,192,203,0.9)";}
+else if (center2>99 && center2<125){ krok2.style.borderColor = "rgba(255,192,203,0.83)";}
+else if (center2>124 && center2<150){ krok2.style.borderColor = "rgba(255,192,203,0.76)";}
+else if (center2>149 && center2<175){ krok2.style.borderColor = "rgba(255,192,203,0.69)";}
+else if (center2>174 && center2<200){ krok2.style.borderColor = "rgba(255,192,203,0.62)";}
+else if (center2>199 && center2<225){ krok2.style.borderColor = "rgba(255,192,203,0.55)";}
+else if (center2>224 && center2<250){ krok2.style.borderColor = "rgba(255,192,203,0.48)";}
+else if (center2>249 && center2<275){ krok2.style.borderColor = "rgba(255,192,203,0.41)";}
+else if (center2>274 && center2<300){ krok2.style.borderColor = "rgba(255,192,203,0.34)";}
+else if (center2>299 && center2<325){ krok2.style.borderColor = "rgba(255,192,203,0.27)";}
+else if (center2>324 && center2<350){ krok2.style.borderColor = "rgba(255,192,203,0.2)";}
+else if (center2>349){ krok2.style.borderColor = "rgba(255,192,203,0.13)";}
+
+krok3 = document.getElementById("o1");
+
+var rect3 = krok3.getBoundingClientRect();
+var center3 = (h/2) - rect3.top - korekta;
+center3 = center3/1
+if (center3<0) { center3 = center3 - 2*center3; };
+if (center3<75) { krok3.style.borderColor = "rgba(255,192,203,1)"; }
+else if (center3>74 && center3<100){ krok3.style.borderColor = "rgba(255,192,203,0.9)";}
+else if (center3>99 && center3<125){ krok3.style.borderColor = "rgba(255,192,203,0.83)";}
+else if (center3>124 && center3<150){ krok3.style.borderColor = "rgba(255,192,203,0.76)";}
+else if (center3>149 && center3<175){ krok3.style.borderColor = "rgba(255,192,203,0.69)";}
+else if (center3>174 && center3<200){ krok3.style.borderColor = "rgba(255,192,203,0.62)";}
+else if (center3>199 && center3<225){ krok3.style.borderColor = "rgba(255,192,203,0.55)";}
+else if (center3>224 && center3<250){ krok3.style.borderColor = "rgba(255,192,203,0.48)";}
+else if (center3>249 && center3<275){ krok3.style.borderColor = "rgba(255,192,203,0.41)";}
+else if (center3>274 && center3<300){ krok3.style.borderColor = "rgba(255,192,203,0.34)";}
+else if (center3>299 && center3<325){ krok3.style.borderColor = "rgba(255,192,203,0.27)";}
+else if (center3>324 && center3<350){ krok3.style.borderColor = "rgba(255,192,203,0.2)";}
+else if (center3>349){ krok3.style.borderColor = "rgba(255,192,203,0.13)";}
+
+
+
+krok4 = document.getElementById("o0");
+
+var rect4 = krok4.getBoundingClientRect();
+var center4 = (h/2) - rect4.top - korekta;
+center4 = center4/1
+if (center4<0) { center4 = center4 - 2*center4; };
+if (center4<75) { krok4.style.borderColor = "rgba(255,192,203,1)"; }
+else if (center4>74 && center4<100){ krok4.style.borderColor = "rgba(255,192,203,0.9)";}
+else if (center4>99 && center4<125){ krok4.style.borderColor = "rgba(255,192,203,0.83)";}
+else if (center4>124 && center4<150){ krok4.style.borderColor = "rgba(255,192,203,0.76)";}
+else if (center4>149 && center4<175){ krok4.style.borderColor = "rgba(255,192,203,0.69)";}
+else if (center4>174 && center4<200){ krok4.style.borderColor = "rgba(255,192,203,0.62)";}
+else if (center4>199 && center4<225){ krok4.style.borderColor = "rgba(255,192,203,0.55)";}
+else if (center4>224 && center4<250){ krok4.style.borderColor = "rgba(255,192,203,0.48)";}
+else if (center4>249 && center4<275){ krok4.style.borderColor = "rgba(255,192,203,0.41)";}
+else if (center4>274 && center4<300){ krok4.style.borderColor = "rgba(255,192,203,0.34)";}
+else if (center4>299 && center4<325){ krok4.style.borderColor = "rgba(255,192,203,0.27)";}
+else if (center4>324 && center4<350){ krok4.style.borderColor = "rgba(255,192,203,0.2)";}
+else if (center4>349){ krok4.style.borderColor = "rgba(255,192,203,0.13)";}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+};
+*/
+
+resizeCanvasToDisplaySize();
+
+window.addEventListener("resize", resizeCanvasToDisplaySize);
+window.onload = wyrownanie;
+
+function wyrownanie() {
+let przeliczony_styl = window.getComputedStyle(document.getElementById("pr1"));
+let heightt = przeliczony_styl.getPropertyValue('height')
+
+document.getElementById("pr1tx").style.height = heightt; ;
+
+let przeliczony_styl2 = window.getComputedStyle(document.getElementById("pr1tx_"));
+let wys_child = przeliczony_styl2.getPropertyValue('height')
+document.getElementById("pr1tx_").style.marginTop = parseFloat(heightt.slice(0,-2)) - parseFloat(wys_child.slice(0,-2)) + "px";
+}
+
+
+function rusify() {
+    document.getElementById("b0").innerHTML = "<strong>АДМИНИСТРАТОР</strong>";
+    document.getElementById("b1").innerHTML = "<strong>ПРЕЗЕНТАЦИЯ</strong>";
+    document.getElementById("b2").innerHTML = "<strong>ТЕСТИРОВАНИЕ</strong>";
+    document.getElementById("b3").innerHTML = "<strong>ЛИЦЕНЗИЯ</strong>";
+    document.getElementById("uzyt_label").innerHTML = "Логин:";
+    document.getElementById("haslo_label").innerHTML = "Пароль:";
+    document.getElementById("zal").innerHTML = "&nbspвойти&nbsp";
+
+    document.getElementById("pinktxt0").innerHTML = `Вот краткая презентация виртуальной консультационной комнаты аптеки.
+ Проект начал создаваться для граждан Российской Федерации, которым мы хотели предложить инструмент для облегчения покупки лекарств в Польше.
+ Вместо того, чтобы физически доставлять рецепт, теперь они могут отправить его в электронном виде через BKK, прежде чем получить сообщение, готовое к сбору. Благодаря этому они пересекают границу только один раз.
+ `
+    document.getElementById("pr1tx_").innerHTML = `Виртуальная консультация комната также является местом, где люди помогают себе принимать обоснованные решения о покупке. Сайт имеет локальное покрытие и является эксклюзивным. Доступ к нему возможен только с использованием уникальных данных, содержащихся на визитной карточке. Визитная карточка вручается только лично. В «эру коронавируса» дистанционное общение с персоналом аптеки приобрело новое значение.`;
+     document.getElementById("s0_0").innerHTML = `Удобная, интуитивно понятная навигация по сайту. Вы можете забыть о рекламе, баннерах, всплывающих окнах и других препятствиях, полностью сосредоточившись на том, что действительно важно для вас.`;
+     document.getElementById("s0_1").innerHTML = `Мы уважаем ваше время.`;
+     document.getElementById("s1_0").innerHTML = `Дискуссионный форум модерируется специалистами. Мы уверены, что содержание там имеет смысл и полезно.`;
+     document.getElementById("s1_1").innerHTML = `База данных достоверной информации, советов и подлинных впечатлений, которые люди получают, используя различную специфику.`;
+     document.getElementById("s2_0").innerHTML = `Два клика, немного текста и все готово. Эргономичный чемпионат мира.`;
+     document.getElementById("s2_1").innerHTML = `Нужна ли какая-то функциональность? Расскажите нам об этом, и одного дня будет достаточно, и он будет реализован. Наслаждайтесь вместе с нами в разработке этого бесплатного софта. :-)`;
+     document.getElementById("s3_0").innerHTML = `В телефоне после входа предлагаем добавить страницу на главный экран в меню веб-браузера.`;
+     document.getElementById("s3_1").innerHTML = `Тогда вам не придется каждый раз вводить логин и пароль, и все, без установки, будет работать как нативное «приложение».`;
+
+     document.getElementById("stopka").innerHTML ='© 2020 Петр Глуховский с оговорками, включенными во вкладку «лицензия»';
+
+    document.getElementById("o0").src="{% static 'ruslajd0.jpg' %}";
+    document.getElementById("o1").src="{% static 'ruslajd1.jpg' %}";
+    document.getElementById("o2").src="{% static 'ruslajd2.jpg' %}";
+
+
+  var materials_ru = [
+  new THREE.MeshPhongMaterial({map: loader.load("{% static 'pill2.png' %}")}),
+  new THREE.MeshPhongMaterial({map: loader.load("{% static 'ru_wpks.png' %}")}),
+  new THREE.MeshPhongMaterial({map: loader.load("{% static 'recepta3.png' %}")}),
+  new THREE.MeshPhongMaterial({map: loader.load("{% static 'vac.png' %}")}),
+  new THREE.MeshPhongMaterial({map: loader.load("{% static 'apt.png' %}")}),
+  new THREE.MeshPhongMaterial({map: loader.load("{% static 'tabletka3.png' %}")}),
+];
+  szescian.material = materials_ru;
+  szescian.material.needsUpdate = true;
+  wyrownanie();
+}
+
+function polify() {
+     document.getElementById("b0").innerHTML = "ADMINISTRATOR";
+     document.getElementById("b1").innerHTML = "PREZENTACJA";
+     document.getElementById("b2").innerHTML = "TESTOWANIE";
+     document.getElementById("b3").innerHTML = "LICENCJA";
+     document.getElementById("uzyt_label").innerHTML = "Login:";
+     document.getElementById("haslo_label").innerHTML = "Hasło:";
+     document.getElementById("zal").innerHTML = "&nbspzaloguj&nbsp";
+
+     document.getElementById("pinktxt0").innerHTML = 'Tu znajduje się krótka prezentacja aptecznego Wirtualnego Pokoju Konsultacyjnego. Projekt zaczął powstawać z myślą o obywatelach Federacji Rosyjskiej którym chcieliśmy zaoferować narzędzie ułatwiające zakup leków w Polsce. Zamiast od razu, fizycznie dostarczać receptę mogą teraz wcześniej wysłać ją elektronicznie za pomocą WPK, a potem otrzymać komunikat o lekach gotowych do odebrania. Dzięki temu przekraczają granicę tylko raz. W "dobie koronawirusa" zdalna komunikacja z personelem apteki nabrała nowego znaczenia.'
+     document.getElementById("pr1tx_").innerHTML = `Wirtualny Pokój Konsultacyjny to też miejsce gdzie ludzie pomagają sobie w podejmowaniu przemyślanych decyzji zakupowych. Podjęcie przemyślanej decyzji często wiąże się z zaoszczędzeniem pieniędzy, które mogły być niepotrzebnie wydane na coś co działa źle lub tak samo jak inny tańszy preparat. Serwis posiada zasięg lokalny i ma ekskluzywny charakter. Dostęp do niego jest możliwy wyłącznie za pomocą unikatowych danych zawartych na wizytówce. Wizytowka jest wręczana tylko osobiście.`;
+     document.getElementById("s0_0").innerHTML = `Komfortowe, intuicyjne poruszanie się po stronie. Możesz zapomnieć o reklamach, banerach, wyskakujących okienkach i innych przeszkodach koncentrując się w pełni na tym co dla Ciebie naprawdę istotne.`;
+     document.getElementById("s0_1").innerHTML = `Szanujemy Twój czas.`;
+     document.getElementById("s1_0").innerHTML = `Forum dyskusyjne moderowane przez specjalistów. Pilnujemy by treści tam zawarte miały sens i były pomocne.`;
+     document.getElementById("s1_1").innerHTML = `Baza rzetelnych informacji, porad i autentycznych wrażeń jakie ludzie odnoszą ze stosowania różnych specyfików.`;
+     document.getElementById("s2_0").innerHTML = `Dwa kliknięcia, trochę tekstu i sprawa załatwiona. Mistrzostwo świata w ergonomii.`;
+     document.getElementById("s2_1").innerHTML = `Brakuje jakiejś potrzebnej funkcjonalności? Powiedz nam o tym a wystarczy jedno popołudnie i będzie zaimplementowana. Ciesz się razem z nami rozwijając ten darmowy soft. :-)`;
+     document.getElementById("s3_0").innerHTML = `W telefonie, już po zalogowaniu się, proponujemy dodać stronę do ekranu głównego w menu przeglądarki internetowej.`;
+     document.getElementById("s3_1").innerHTML = `Wtedy nie trzeba będzie za każdym razem wpisywać loginu i hasła, a całość, bez instalowania, będzie działać jak natywna "apka".`;
+
+     document.getElementById("stopka").innerHTML ='© 2020 Piotr Głuchowski z zastrzeżeniami ujętymi w zakładce "licencja"';
+
+     document.getElementById("o0").src="{% static 'demologin0bb.jpg' %}";
+     document.getElementById("o1").src="{% static 'demologin1bb.jpg' %}";
+     document.getElementById("o2").src="{% static 'demologin4bb.jpg' %}";
+
+  szescian.material = materials;
+  szescian.material.needsUpdate = true;
+  wyrownanie();
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
