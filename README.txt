@@ -4,6 +4,8 @@ Copyright (c) Piotr Głuchowski 2021 z zastrzeżeniami rozpoczynającymi się od
 
 Licencja BSD-3
 
+https://opensource.org/licenses/BSD-3-Clause
+
 W mechanizmie forum wykorzystano kod diango-machina autorstwa Morgana Auberta https://github.com/ellmetha/django-machina
 
 Wszystkie modyfikacje na potrzeby WPK zostały wykonane przeze mnie.
