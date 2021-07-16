@@ -10,7 +10,7 @@ W mechanizmie forum wykorzystano kod diango-machina autorstwa Morgana Auberta ht
 
 Wszystkie modyfikacje na potrzeby WPK zostały wykonane przeze mnie.
 
-Odnośnie wykożystanego mechanizmu forum:
+Odnośnie wykorzystanego mechanizmu forum:
 
 Copyright (c) 2013-2020, Morgan Aubert and contributors.
 Copyright (c) 2013-2021, Morgan Aubert and contributors.
