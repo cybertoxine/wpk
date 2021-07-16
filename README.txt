@@ -1,5 +1,8 @@
-# vim: set ft=rst:
 
-See https://help.pythonanywhere.com/ (or click the "Help" link at the top
-right) for help on how to use PythonAnywhere, including tips on copying and
-pasting from consoles, and writing your own web applications.
+Autor: Piotr Głuchowski 2021
+
+Witrualny Pokój Konsultacyjny
+
+W mechanizmie forum wykorzystano kod diango-machina autorstwa Morgana Auberta https://github.com/ellmetha/django-machina
+
+Wszystkie modyfikacje na potrzeby WPK zostały wykonane przeze mnie.
